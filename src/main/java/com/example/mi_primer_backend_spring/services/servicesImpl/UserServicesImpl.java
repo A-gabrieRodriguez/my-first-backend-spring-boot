@@ -44,7 +44,8 @@ public class UserServicesImpl implements UserService {
         return usersInfo;
     }
 
-    //stream() =
+    // el .stream es para convertir la lista en un stream y steam() es para recorrer la lista
+    // el .filter es para filtrar los elementos de la lista
     @Override
     public User login(String id,String password) {
         return users.stream()
