@@ -20,6 +20,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //Validando usuario y contraseña para login
     @PostMapping("/auth/login")
     public ResponseEntity<?> createUser(@Valid @RequestBody UserLoginDTO user, BindingResult validations) {
         if (validations.hasErrors()) {
@@ -33,6 +34,7 @@ public class UserController {
 
     }
 
+    //Obteniendo todos los usuarios
     @GetMapping("/usersAll")
     public ResponseEntity<?> readAllUsers(
             //CASOS de ERROR
@@ -54,5 +56,29 @@ public class UserController {
                 .map(u -> new UserInfoDTO(u.getId(), u.getName(), u.getEmail(), u.getRole(), u.isActive()))
                 .toList();
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    //Creando un nuevo usuario
+    @PostMapping("/newusers")
+    public ResponseEntity<?> register(
+            //CASOS de ERROR
+            @Valid @RequestBody UserRegisterDTO user, BindingResult validations) {
+        //CASO 1: Si la petición no es válida
+        if (validations.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        //CASO 2: Si el usuario ya existe
+        UserRegisterDTO userFound = new UserRegisterDTO(user.getId(), user.getNombre(), user.getApellido(),
+                user.getGmail(), user.getPassword(), user.getRol(), user.getFecha_contratacion());
+
+        //CASO 3: Si no se encuentra el usuario
+        if (validations.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        //guardando el usuario
+        userService.createUser(userFound);
+        return new ResponseEntity<>("Se creo el usuario", HttpStatus.OK);
     }
 }

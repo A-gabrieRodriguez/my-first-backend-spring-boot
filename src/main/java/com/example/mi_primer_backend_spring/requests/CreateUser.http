@@ -1,0 +1,12 @@
+POST http://localhost:8080/api/newusers HTTP/1.1
+Content-Type: application/json
+
+{
+  "id":"PCVIO",
+  "nombre":"Pablo Cesar",
+  "apellido":"Villalobos Palacios",
+  "gmail":"pablitoclavito@gmail.com",
+  "password":"lkjhds",
+  "rol":"Carpintero",
+  "fecha_contratacion":"3/12/2020"
+}
