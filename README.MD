@@ -137,10 +137,10 @@ public class UserController {
 ```
 
 Unaves allamos escrito todo ya podremos hacer una peticion, para ello podemos usar `Postman` o tambien `Insomnia`,
-en caso no se pueda contar con ninguna herramienta podemos hacer consultas el conpilador que este usando.
+en caso no se pueda contar con ninguna de esas herramienta podemos hacer consultas con el conpilador que este usando.
 
 > [!NOTE]
->Para mayor organizacion podemos crear una capeta llamada Requests y escrivimos nuestro **achivo.http**,
+>Para mayor organizacion podemos crear una capeta llamada `Requests` y escrivimos nuestro **achivo.http**,
 > un ejemplo seria `AddUser.hppt`
 
 Creamos nuestar peticion dentro del archivo, en este caso para creaer un usuario:
