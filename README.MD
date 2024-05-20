@@ -59,7 +59,7 @@ Comenzamos con la carpeta entities, que significa entidades, referencia a nuestr
 nuestra base de datos
 
 Para ejemplo practico crearemos una tabla user,
-creamos un archivo.java, en este caso sera User.java
+creamos un archivo.java, en este caso sera `User.java`
 
 Escrivimos el siguiente codigo:
 
