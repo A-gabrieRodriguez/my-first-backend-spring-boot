@@ -22,6 +22,8 @@ public class UserServicesImpl implements UserService  {
 
     @Override
     public void AddUser(User user) {
+        //En esta parte se guarda el usuario,
+        // es recomendable que se haga una validacion de los datos antes de guardar
         UserRepositoy.save(user);
     }
 }
