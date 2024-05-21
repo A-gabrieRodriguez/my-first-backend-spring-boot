@@ -19,14 +19,17 @@ public class UserController {
 
     @Autowired
     UserRepositoy userRepositoy;
+    @Autowired
+    UserService userService;
 
     @PostMapping("/adduser")
     public void addUser(@RequestBody User user) {
-        userRepositoy.save(user);
+
+        userService.AddUser(user);
     }
     @GetMapping("/users")
     public List<User> getUsers() {
-        return userRepositoy.findAll();
+        return userService.FinAll();
     }
 
 }
