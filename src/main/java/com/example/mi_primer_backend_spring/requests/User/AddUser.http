@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/adduser
+Content-Type: application/json
+
+{
+  "nombre": "Romeo",
+  "apellido": "Cartagena",
+  "email": "example@gmail.com",
+  "password": "cualquiercosa",
+  "role": {
+    "role": "Administrador"
+  },
+  "fecha_contratacion": "2017-01-09"
+}
