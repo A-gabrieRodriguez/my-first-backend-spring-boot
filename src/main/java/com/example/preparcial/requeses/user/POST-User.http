@@ -1,0 +1,8 @@
+POST http://localhost:8080/user/add-user
+Content-Type: application/json
+
+{
+  "username": "Alejandro Sanz",
+  "password": "12345",
+  "role": "Limpieza"
+}

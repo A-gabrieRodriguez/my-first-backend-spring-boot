@@ -1,0 +1,9 @@
+POST http://localhost:8080/course/add-course
+Content-Type: application/json
+
+{
+  "course": "Entrenamiento dirigido",
+  "description": "Ejercicio de cardio con visicleta y pesas",
+  "professor": "Mario Olivo Castor",
+  "schedule": "Lunes a Viernes 8:00 a 10:00"
+}
