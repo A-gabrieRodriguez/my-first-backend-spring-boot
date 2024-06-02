@@ -1,6 +1,7 @@
 package com.example.preparcial.controllers;
 
 import com.example.preparcial.models.dtos.AddUserDTO;
+import com.example.preparcial.models.dtos.GetUserByIdDTO;
 import com.example.preparcial.services.UserService;
 import com.example.preparcial.models.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,17 @@ public class UserControllers {
     public ResponseEntity<String> AddUser(@RequestBody AddUserDTO addUserDTO) {
         userService.AddUser(addUserDTO);
         return ResponseEntity.ok("User added successfully");
+    }
+
+    @PostMapping("/find-user")
+    public  ResponseEntity<User> getUserByName(@RequestBody GetUserByIdDTO requesBody){
+        String person = requesBody.getEmail();
+        User userId = userService.FindById(person);
+        if(userId != null){
+            return ResponseEntity.ok(userId);
+        }else{
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

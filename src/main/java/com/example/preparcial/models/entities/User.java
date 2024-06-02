@@ -18,8 +18,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID code;
+
     private String username;
     private String password;
+    private String email;
     private String role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)

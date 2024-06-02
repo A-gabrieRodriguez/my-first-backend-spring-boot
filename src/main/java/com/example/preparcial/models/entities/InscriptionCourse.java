@@ -18,11 +18,11 @@ public class InscriptionCourse {
     private UUID id;
 
     //Llave de usuario
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "code")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id", referencedColumnName = "code")
     private Course course;
 

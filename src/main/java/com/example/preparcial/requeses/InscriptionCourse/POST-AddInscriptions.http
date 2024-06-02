@@ -1,0 +1,8 @@
+POST http://localhost:8080/inscriptions/add-inscription
+Content-Type: application/json
+
+{
+  "username": "Daniel Tesorero",
+  "email": "danielitoteso@gmail.com",
+  "course": "Entrenamiento dirigido"
+}

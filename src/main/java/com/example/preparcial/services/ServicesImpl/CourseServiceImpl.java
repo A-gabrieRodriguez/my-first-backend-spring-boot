@@ -2,6 +2,7 @@ package com.example.preparcial.services.ServicesImpl;
 
 import com.example.preparcial.models.dtos.AddCourseDTO;
 import com.example.preparcial.models.entities.Course;
+import com.example.preparcial.models.entities.User;
 import com.example.preparcial.reposiries.CourseRepository;
 import com.example.preparcial.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,12 @@ public class CourseServiceImpl implements CourseService{
         newCourse.setDescription(course.getDescription());
         newCourse.setSchedule(course.getSchedule());
         courseRepository.save(newCourse);
+    }
+
+    @Override
+    public Course FindById(String course) {
+        Course findcourse = courseRepository.findByCourse(course);
+
+        return findcourse;
     }
 }

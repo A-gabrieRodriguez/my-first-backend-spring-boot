@@ -8,5 +8,6 @@ import java.util.List;
 public interface CourseService {
     List<Course> FindAll();
     void AddCourse(AddCourseDTO course);
+    Course FindById(String course);
 
 }
